@@ -1,0 +1,10 @@
+services:
+  api-tokens:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: app.jar
+    ports:
+      - "8081:8081"
+    command: ["java", "-Dspring.profiles.active=not_local", "-jar", "app.jar"]
