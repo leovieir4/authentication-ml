@@ -1,6 +1,6 @@
 # 🔐 API REST de Geração de Tokens 🗝️
 
-### PARA GERAR O TOKEN NA API É NECESSARIO PARA O SEGUINTE USENAME E SENHA NO BODY DA REGIST DO ENDPONT /gerarToken
+### PARA GERAR O TOKEN NA API É NECESSARIO PASSAR O SEGUINTE USENAME E SENHA NO BODY DA REGIST DO ENDPONT /gerarToken
 
 - username: usuariomercadolivre
 - passeword: senhamercadolivre
