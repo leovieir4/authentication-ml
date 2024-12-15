@@ -1,5 +1,10 @@
 # 🔐 API REST de Geração de Tokens 🗝️
 
+### PARA GERAR O TOKEN NA API É NECESSARIO PARA O SEGUINTE USENAME E SENHA NO BODY DA REGIST DO ENDPONT /gerarToken
+
+- username: usuariomercadolivre
+- passeword: senhamercadolivre
+
 Este projeto consiste em uma API REST desenvolvida em Java com Gradle para gerar e validar tokens de autenticação. A API possui dois endpoints principais, detalhados abaixo.
 
 ## Endpoints:
@@ -101,7 +106,7 @@ docker-compose up -d --build
 [Documentação](http://13.59.156.55:8081/swagger-ui/index.html#/auth-controller)
 
 ## 🚀 Deploy na AWS:
-[Link da API](http://13.59.156.55/)
+[Link da API](http://13.59.156.55:8081)
 
 ## 🧑‍💻 Autor:
 Leonardo Vieira da Silva
