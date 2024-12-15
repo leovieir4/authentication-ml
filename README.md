@@ -5,6 +5,8 @@
 - username: usuariomercadolivre
 - passeword: senhamercadolivre
 
+- Obs: O tempo de validade do token é de 5 min, após esse tempo deve ser gerado outro token
+
 Este projeto consiste em uma API REST desenvolvida em Java com Gradle para gerar e validar tokens de autenticação. A API possui dois endpoints principais, detalhados abaixo.
 
 ## Endpoints:
