@@ -1,9 +1,10 @@
-version: "3.9"
 services:
-  api-tokens-auth:
+  api-tokens:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        JAR_FILE: app.jar
     ports:
       - "8081:8081"
-    command: ["java", "-DSPRING_PROFILES_ACTIVE=not_local", "-jar", "app.jar"]
+    command: ["java", "-Dspring.profiles.active=not_local", "-jar", "app.jar"]
