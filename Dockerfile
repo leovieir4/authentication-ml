@@ -38,4 +38,4 @@ RUN chmod 755 /app/app.jar
 COPY credentials /root/.aws/credentials
 
 EXPOSE 8081
-ENTRYPOINT ["java", "-Dspring.profiles.active=not_local", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
