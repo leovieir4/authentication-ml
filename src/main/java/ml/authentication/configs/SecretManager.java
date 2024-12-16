@@ -27,23 +27,19 @@ public class SecretManager {
     @Bean
     @Profile(ProfileConstants.NOT_LOCAL)
     public SecretData getSecret() throws JsonProcessingException {
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> not local 1");
         Region region = Region.of(Region.US_EAST_2.toString());
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> not local 2");
+
         SecretsManagerClient client = SecretsManagerClient.builder()
                 .region(region)
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .build();
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> not local 3");
+
         GetSecretValueRequest getSecretValueRequest = GetSecretValueRequest.builder()
                 .secretId(securityConstants.getSecretArn())
                 .build();
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> not local 4");
+
         GetSecretValueResponse getSecretValueResult = client.getSecretValue(getSecretValueRequest);
         String secret = getSecretValueResult.secretString();
-
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> not local 5");
-        System.out.println(secret);
 
         return this.objectMapper.readValue(secret, SecretData.class);
 
@@ -52,12 +48,8 @@ public class SecretManager {
     @Bean
     @Profile(ProfileConstants.LOCAL)
     public SecretData getSecretLocal() throws JsonProcessingException {
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> local");
         SecretData secretData = new SecretData();
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> local");
         secretData.setSecret(securityConstants.getLocalSecret());
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> local");
-        System.out.println(secretData);
 
         return secretData;
 
