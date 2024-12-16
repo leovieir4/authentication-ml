@@ -104,6 +104,12 @@ docker-compose up -d --build
 - Remova a linha - `~/.aws/credentials:/root/.aws/credentials do arquivo docker-compose.yml`.
 - Reconstrua a imagem com `docker-compose up -d --build`.
 
+
+## 💾 Banco de Dados
+Para reduzir custos na AWS, esta API utiliza um banco de dados em memória H2.
+
+Observação: Em um ambiente de produção, o ideal seria utilizar um banco de dados relacional para armazenar os registros de login e senha dos usuários de forma persistente e segura.
+
 ## 📖 Documentação da API (Swagger):
 [Documentação](http://13.59.156.55:8081/swagger-ui/index.html#/auth-controller)
 
